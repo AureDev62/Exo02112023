@@ -36,9 +36,7 @@ public class ControllerVue {
 
     @GetMapping("/listStudent")
     public String listPage(Model model){
-        List<Student> students = studentService.getAllStudents();
-        System.out.println(students);
-        model.addAttribute("students", students);
+        model.addAttribute("students", studentService.getAllStudents());
         return"listStudent";
     }
 
