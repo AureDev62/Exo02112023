@@ -48,6 +48,6 @@ public class StudentService implements IStudentService {
 
     @Override
     public void deleteStudent(Long id) {
-students.removeIf(student -> student.getId().equals(id));
+        students.removeIf(student -> student.getId().equals(id));
     }
 }

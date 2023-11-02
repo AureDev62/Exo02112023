@@ -9,8 +9,32 @@
 <body>
 <div th:replace="~{home :: navbar}"></div>
 <h1>ListStudent</h1>
+
+<div th:if="${students.isEmpty()}">
+    <p>Pas d'étudiants</p>
+</div>
+<div th:if="${!students.isEmpty()}">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.lastName}"></td>
+            <td th:text="${student.firstName}"></td>
+            <td th:text="${student.age}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
+
 </body>
 </html>
